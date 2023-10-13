@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-const TYPES = ["html", "file", "json"] as const;
+const TYPES = ["json", "html", "preview"] as const;
 
 const queryParamTypeSchema = z.object({
   type: z.enum(TYPES),

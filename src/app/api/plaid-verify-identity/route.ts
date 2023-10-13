@@ -29,13 +29,13 @@ export async function GET(req: Request) {
     const html = render(template);
 
     switch (params.type) {
-      case "html":
+      case "preview":
         return new Response(html, {
           headers: {
             "Content-Type": "text/html; charset=utf-8",
           },
         });
-      case "file":
+      case "html":
         return new Response(html, {
           headers: {
             "Content-Disposition":
