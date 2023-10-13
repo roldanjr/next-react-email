@@ -11,10 +11,10 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "email:dev": "email dev --port 4000 --dir ./src/emails/templates",
-    "email:export": "NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates",
-    "email:build": "email build --dir ./src/emails/templates",
-    "email:start": "email start --port 4000"
+    "copy:env": "cp .env.production .react-email/",
+    "email:dev": "npm run copy:env && email dev --port 4000 --dir ./src/emails/templates",
+    "email:export": "npm run copy:env && NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates",
+    "email:build": "npm run copy:env && email build --dir ./src/emails/templates"
   },
   "dependencies": {
     "@react-email/components": "0.0.7",
