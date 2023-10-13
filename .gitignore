@@ -36,3 +36,5 @@ next-env.d.ts
 html-templates/
 
 node_modules/
+
+email-templates-docs/

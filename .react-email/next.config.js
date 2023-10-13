@@ -14,6 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: "export",
+  distDir: "../email-templates-docs",
 };
 
 module.exports = nextConfig;
