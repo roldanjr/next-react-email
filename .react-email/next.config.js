@@ -15,6 +15,7 @@ const nextConfig = {
   },
   output: "export",
   distDir: "../email-templates-docs",
+  basePath: process.env.NODE_ENV === "production" ? "/next-react-email" : "",
 };
 
 module.exports = nextConfig;
