@@ -14,7 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: "export",
-  distDir: "../email-templates-docs",
+  distDir: "../email-templates-preview",
   basePath: process.env.NODE_ENV === "production" ? "/next-react-email" : "",
 };
 

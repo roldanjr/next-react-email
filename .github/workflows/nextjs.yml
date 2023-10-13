@@ -73,12 +73,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: cd .react-email && pwd && ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
+      - name: Build email templates preview
         run: cd .react-email && pwd && ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./email-templates-docs
+          path: ./email-templates-preview
 
   # Deployment job
   deploy:
