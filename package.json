@@ -12,9 +12,9 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "copy:env": "cp .env.production .react-email/",
-    "email:dev": "npm run copy:env && email dev --port 4000 --dir ./src/emails/templates",
-    "email:export": "npm run copy:env && NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates",
-    "email:build": "npm run copy:env && email build --dir ./src/emails/templates"
+    "email:dev": "concurrently \"npm run copy:env\" \"npm run dev\" \"email dev --port 4000 --dir ./src/emails/templates\"",
+    "email:export": "concurrently \"npm run copy:env\" \"NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates\"",
+    "email:build": "concurrently \"npm run copy:env\" \"email build --dir ./src/emails/templates\""
   },
   "dependencies": {
     "@react-email/components": "0.0.7",
@@ -29,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^8.2.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.5.4",
     "eslint-config-prettier": "8.3.0",
