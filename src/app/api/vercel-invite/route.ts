@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
-
 import VercelInviteUserEmail from "@/emails/templates/vercel-invite-user";
 
 export async function GET(req: Request) {
@@ -19,5 +18,24 @@ export async function GET(req: Request) {
   });
   const html = render(template);
 
-  return NextResponse.json({ text, html });
+  const { searchParams } = new URL(req.url);
+  const type = searchParams.get("type");
+
+  switch (type) {
+    case "html":
+      return new Response(html, {
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+        },
+      });
+    case "file":
+      return new Response(html, {
+        headers: {
+          "Content-Disposition":
+            "attachment; filename=vercel-invite-user.html",
+        },
+      });
+    case "json":
+      return NextResponse.json({ text, html });
+  }
 }

@@ -48,7 +48,8 @@ export const NotionMagicLinkEmail = ({
             marginBottom: "16px",
           }}
         >
-          If you didn&apos;t try to login, you can safely ignore this email.
+          If you didn&apos;t try to login, you can safely ignore this
+          email.
         </Text>
         <Text
           style={{
@@ -58,8 +59,8 @@ export const NotionMagicLinkEmail = ({
             marginBottom: "38px",
           }}
         >
-          Hint: You can set a permanent password in Settings & members → My
-          account.
+          Hint: You can set a permanent password in Settings & members →
+          My account.
         </Text>
         <Img
           src={getMediaUrl("/notion-logo.png")}

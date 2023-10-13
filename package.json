@@ -2,13 +2,19 @@
   "name": "next-react-email",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    ".react-email"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
     "email:dev": "email dev --port 4000 --dir ./src/emails/templates",
-    "email:export": "NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates"
+    "email:export": "NODE_ENV=test email export --dir ./src/emails/templates --outDir ./html-templates",
+    "email:build": "email build --dir ./src/emails/templates",
+    "email:start": "email start --port 4000"
   },
   "dependencies": {
     "@react-email/components": "0.0.7",
@@ -16,14 +22,19 @@
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-email": "1.9.5"
+    "react-email": "1.9.5",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
+    "eslint": "8.32.0",
     "eslint-config-next": "13.5.4",
-    "typescript": "^5"
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "prettier": "2.8.4",
+    "typescript": "5.1.6"
   }
 }

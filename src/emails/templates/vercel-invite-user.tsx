@@ -60,7 +60,8 @@ export const VercelInviteUserEmail = ({
               />
             </Section>
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-              Join <strong>{teamName}</strong> on <strong>Vercel</strong>
+              Join <strong>{teamName}</strong> on{" "}
+              <strong>Vercel</strong>
             </Heading>
             <Text className="text-black text-[14px] leading-[24px]">
               Hello {username},
@@ -73,8 +74,8 @@ export const VercelInviteUserEmail = ({
               >
                 {invitedByEmail}
               </Link>
-              ) has invited you to the <strong>{teamName}</strong> team on{" "}
-              <strong>Vercel</strong>.
+              ) has invited you to the <strong>{teamName}</strong> team
+              on <strong>Vercel</strong>.
             </Text>
             <Section>
               <Row>
@@ -116,20 +117,25 @@ export const VercelInviteUserEmail = ({
             </Section>
             <Text className="text-black text-[14px] leading-[24px]">
               or copy and paste this URL into your browser:{" "}
-              <Link href={inviteLink} className="text-blue-600 no-underline">
+              <Link
+                href={inviteLink}
+                className="text-blue-600 no-underline"
+              >
                 {inviteLink}
               </Link>
             </Text>
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
             <Text className="text-[#666666] text-[12px] leading-[24px]">
               This invitation was intended for{" "}
-              <span className="text-black">{username} </span>.This invite was
-              sent from <span className="text-black">{inviteFromIp}</span>{" "}
-              located in{" "}
-              <span className="text-black">{inviteFromLocation}</span>. If you
-              were not expecting this invitation, you can ignore this email. If
-              you are concerned about your account&rsquo;s safety, please reply
-              to this email to get in touch with us.
+              <span className="text-black">{username} </span>.This
+              invite was sent from{" "}
+              <span className="text-black">{inviteFromIp}</span> located
+              in{" "}
+              <span className="text-black">{inviteFromLocation}</span>.
+              If you were not expecting this invitation, you can ignore
+              this email. If you are concerned about your
+              account&rsquo;s safety, please reply to this email to get
+              in touch with us.
             </Text>
           </Container>
         </Body>

@@ -8,7 +8,7 @@
 /coverage
 
 # next.js
-/.next/
+.next/
 /out/
 
 # production
@@ -33,7 +33,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.react-email/
 html-templates/
 
 node_modules/

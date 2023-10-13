@@ -11,14 +11,11 @@ import {
   Text,
 } from "@react-email/components";
 import { createStyles, getMediaUrl } from "../helpers";
-
-type PlaidVerifyIdentityEmailProps = {
-  validationCode?: string;
-};
+import { PlaidVerifyIdentityProps } from "../schemas/plaid-verify-identity.schema";
 
 export const PlaidVerifyIdentityEmail = ({
-  validationCode = "144833",
-}: PlaidVerifyIdentityEmailProps) => (
+  code: validationCode = "144833",
+}: PlaidVerifyIdentityProps) => (
   <Html>
     <Head />
     <Body style={main}>
