@@ -71,14 +71,12 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Go to the React Email directory
-        run: cd .react-email && pwd
       - name: Install dependencies
-        run: pwd && ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: cd .react-email && pwd && ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        run: pwd && ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: cd .react-email && pwd && ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
-        run: pwd && ${{ steps.detect-package-manager.outputs.runner }} next export
+        run: cd .react-email && pwd && ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
